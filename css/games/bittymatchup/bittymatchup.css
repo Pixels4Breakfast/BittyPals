@@ -1,0 +1,153 @@
+.loading_screen {
+  position:absolute;
+  height:100%;
+  width:100%;
+  background-color: silver;
+}
+
+#cell1 {
+  position:relative;
+  display:table-cell;
+  border-collapse: collapse;
+  text-align:left;
+  width:340px;
+  height:430px;
+  margin:0px;
+}
+#gameBoard {
+  position:relative;
+  display:table-cell;
+  border-collapse: collapse;
+  width:430px;
+  height:430px;
+  margin:0px;
+  /* background-color: #cccccc; */
+}
+#cell3 {
+  position:relative;
+  display:table-cell;
+  border-collapse: collapse;
+  text-align:left;
+  width:340px;
+  height:430px;
+  margin:0px;
+}
+
+#tileBox {
+  position:absolute;
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  /* background-color:white; */
+}
+.tile {
+  position:relative;
+  text-align: center;
+}
+
+.card_image {
+  position:absolute;
+}
+.backer_image {
+  position:absolute;
+}
+
+.img96 {
+  height:96px;
+  width:96px;
+}
+.img66 {
+  height:66px;
+  width:66px;
+}
+.img48 {
+  height:48px;
+  width:48px;
+}
+
+
+
+/*scoring and stuff*/
+.scorebox {
+  font-size: 2em;
+}
+.bonusbox {
+  font-size: 2em;
+  background: red;
+  background: -webkit-linear-gradient(left, orange, green, blue, violet);
+  background: -o-linear-gradient(right, orange, green, blue, violet);
+  background: -moz-linear-gradient(right, orange, green, blue, violet);
+  background: linear-gradient(to right, orange, green, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.totals {
+  font-size:1em;
+}
+
+
+.auto_button {
+  border-radius: 5px;
+  margin-left:20px;
+}
+
+/*FLASHY STUFFS*/
+@-webkit-keyframes glowing {
+  0% { background-color: #eeeeee; -webkit-box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; -webkit-box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; -webkit-box-shadow: 0 0 3px #acc6ef; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #eeeeee; -moz-box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; -moz-box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; -moz-box-shadow: 0 0 3px #acc6ef; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+}
+
+@keyframes glowing {
+  0% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+}
+
+.glowing_button {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+
+#bmInfoBox {
+  position:absolute;
+  height:30px;
+  width:95%;
+  text-align:right;
+}
+
+.info_button {
+  height:30px;
+  width:30px;
+  border-radius:10px;
+  position:relative;
+  cursor:pointer;
+}
+
+.exit_game {
+  position:absolute;
+  top: 100%;
+    -webkit-transform: translateY(calc(-100% - 5px));
+    -ms-transform: translateY(calc(-100% - 5px));
+    transform: translateY(calc(-100% - 5px));
+  left: 10px;
+  border-radius: 5px;
+  background-color:pink;
+  font-weight: bold;
+  color:black;
+}

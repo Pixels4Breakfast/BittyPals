@@ -1,0 +1,295 @@
+html, body {
+
+}
+
+.admin_frame {
+  position:relative;
+  height:auto;
+  width:1200px;
+  border:1px solid cyan;
+  border-radius: 10px;
+  background-color:rgba(255, 255, 255, .6);
+  box-shadow: 8px 8px 12px #333333;
+  overflow: hidden;
+}
+
+.page_mask {
+  position:fixed;
+  z-index:10000;
+  height:100%;
+  width:100%;
+  top:0px;
+  left:0px;
+  background-color: #cccccc;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.editor_pane {
+  position:fixed;
+  z-index:10001;
+  padding:5px;
+  background-color:rgba(255, 255, 255, .9);;
+  border-radius:10px;
+  height:auto;
+  width:600px;
+  display: inline-block;
+  clear:both;
+  float:left;
+  box-shadow: 8px 8px 10px #888888;
+}
+.close_button {
+  position:absolute;
+  top:0px;
+  left: 100%;
+    -webkit-transform: translateX(calc(-100% - 5px));
+    -ms-transform: translateX(calc(-100% - 5px));
+    transform: translateX(calc(-100% - 5px));
+  border-radius: 5px;
+  background-color:red;
+  font-weight: bold;
+  color:white;
+}
+
+.inline_close_button {
+  position:relative;
+  border-radius: 5px;
+  background-color:red;
+  font-weight: bold;
+  color:white;
+}
+
+.edit_title {
+  font-size:15px;
+  font-weight:bold;
+  color:silver;
+}
+
+.category_block {
+  width:265px;  /*this...is annoying.  Why the massive padding?*/
+  padding:2px;
+  background-color: silver;
+  border-radius: 10px;
+  margin:4px;
+}
+
+.form_block {
+  position:relative;
+  left:-30px;
+  top:0px;
+  margin-top:-150px;
+  width:400px;
+  float:right;
+}
+.input_text {
+  border-radius: 5px;
+  padding:2px;
+  margin-right:10px;
+  font-family:"Comic Sans MS", cursive;
+}
+.input_check {
+  margin-right:10px;
+}
+.input_textarea {
+  position:relative;
+  width:100%;
+  height:auto;
+  font-family:"Comic Sans MS", cursive;
+}
+
+table {
+  position:relative;
+  border-collapse:collapse;
+  width:100%;
+}
+th {
+  text-align: left;
+}
+tr:nth-child(even) {
+  background-color:rgba(245, 245, 245, .5);
+  border:none;
+  border-radius:10px;
+}
+
+.breadcrumb {
+  width:100%;
+  margin:5px;
+  text-align:left;
+  font-size: 16px;
+  user-select:none;
+  cursor:pointer;
+}
+  .breadcrumb span { background-color:rgb(200,200,250); border-radius: 10px; padding-left: 4px; padding-right: 4px;}
+  .breadcrumb span .inactive { background-color: none; }
+  .breadcrumb a:link { text-decoration: none; color:blue; }
+  .breadcrumb a:hover { text-decoration: underline overline; color:blue; }
+  .breadcrumb a:visited { text-decoration: none; color:blue; }
+
+
+#invalid {
+  color:red;
+  font-size: 12px;
+}
+
+
+.siteStats {
+  position:relative;
+  text-align:left;
+  display:inline-block;
+  margin-top:10px;
+  width:95%;
+}
+
+#giftDialogue {
+  position:absolute;
+  height:400px;
+  width:500px;
+  padding:5px;
+  border-radius: 15px;
+  background-color:white;
+  border:1px solid black;
+  z-index:12000;
+}
+
+.gd_item {
+
+}
+
+
+
+#packSelectBox {
+  position:relative;
+  height:150px;
+  width:100%;
+  overflow-y:scroll;
+  display:inline-block;
+}
+#packSelectBox ul {
+  display:table;
+  padding-left:5px;
+}
+#packSelectBox li {
+  display:table-row;
+  cursor:pointer;
+}
+#packSelectBox .pItemSelected {
+  background-color:#acc6ef;
+}
+
+
+
+
+/*FLASHY STUFFS*/
+@-webkit-keyframes glowing {
+  0% { background-color: #eeeeee; -webkit-box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; -webkit-box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; -webkit-box-shadow: 0 0 3px #acc6ef; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #eeeeee; -moz-box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; -moz-box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; -moz-box-shadow: 0 0 3px #acc6ef; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+}
+
+@keyframes glowing {
+  0% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+  50% { background-color: #acc6ef; box-shadow: 0 0 40px #0000ff; }
+  100% { background-color: #eeeeee; box-shadow: 0 0 3px #acc6ef; }
+}
+
+.glowing_button {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+
+
+
+
+
+.list_search_block {
+  position:relative;
+  width:100%;
+  user-select: none;
+  cursor:pointer;
+  font-size:.8em;
+}
+.list_search_block:hover {
+  background-color:rgb(200,200,250);
+}
+
+
+
+/*****************************************************TRANSACTION RECORDS************************************************/
+#recordList {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width:100%;
+}
+#recordList tr {
+  background-color:white;
+  display:table;
+  width:100%;
+  text-align: left;
+  border-radius:0px;
+}
+#recordList tr:hover {
+  background-color:#FAA500;
+}
+
+#recordList tr:nth-child(even) {
+  background:#ddddff;
+}
+#recordList tr:nth-child(even):hover {
+  background-color:#FAA500;
+}
+
+#recordList td {
+  border-left: 1px inset silver;
+  text-overflow: ellipsis;
+  padding:2px;
+  cursor:pointer;
+}
+#recordList td:hover {
+  background-color:#fab555;
+  font-weight:bold;
+}
+
+#recordList .id { width:4%; }
+#recordList .pid { width:6%; }
+#recordList .username { width:20%; }
+#recordList .invoice { width:25%; }
+#recordList .date { width:15%; }
+#recordList .type { width:12%; }
+#recordList .amount { width:8%; border:none; }
+
+
+.widget_form {
+  position:relative;
+  display:inline-block;
+  text-align:left;
+  width:100%;
+  border:2px ridge #ffa500;
+  background-color:silver;
+  padding:2px;
+}
+
+
+
+
+#collectionTable {
+
+}
+#collectionTable td {
+  vertical-align:top;
+
+}

@@ -1,0 +1,114 @@
+#gameScreen {
+  border:1px solid silver;
+  background-color:white;
+}
+#statBar {
+  position:absolute;
+  width:100%;
+  border-bottom:1px solid silver;
+  z-index: 10000;
+}
+
+.statCell {
+  position:relative;
+  display:inline-block;
+  width:33%;
+  z-index:9500;
+  background-color:white;
+}
+
+.noselect {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* ...this would be nice... */  
+}
+
+#pauseMenu {
+  position:absolute;
+  text-align: center;
+  top:175px;
+  height:410px;
+  width:300px;
+  z-index: 10000;
+  font-size: 30px;
+}
+#pauseMenu div {
+  width:100%;
+  list-style: none;
+  border-radius: 10px;
+  cursor:pointer;
+}
+#pauseMenu div:hover {
+  background-color:rgba(150,150,150, .6);
+}
+
+#arcadeMask {
+  position:absolute;
+  z-index:9100;
+  pointer-events: none;
+  background-color:rgba(200,200,230,.5);
+  top:0px;
+  left:0px;
+  height:100%;
+  width:100%;
+}
+
+#dodgeButton {
+  position:absolute;
+  top:380px;
+  left:5px;
+  height:50px;
+  width:50px;
+}
+#pauseButton {
+  position:absolute;
+  top:380px;
+  left:1046px;
+  height:50px;
+  width:50px;
+}
+
+
+/*GRAPHICS*/
+
+/*tower front (furthest)*/
+#tf {
+  position:absolute;
+  top:295px;
+  width:460px;
+  height:140px;
+  z-index:901;
+  background-image: url('../../../assets/arcade/snowballhero/pFort_front.png');
+}
+#playerContainer {
+  position:absolute;
+  border:1px solid blue; /*kill this*/
+  top:280px;
+  width:150px;
+  height:150px;
+  z-index:902;
+}
+/*tower back (closest)*/
+#tb {
+  position:absolute;
+  top:364px;
+  width:462px;
+  height:71px;
+  z-index:903;
+  background-image: url('../../../assets/arcade/snowballhero/pFort_back.png');
+}
+
+
+.snowball {
+  position:absolute;
+  z-index:10000;
+  height:1px;
+  width:1px;
+  overflow:visible;
+}
+.sbImg {
+  position:absolute;
+  top:-22px;
+  left:-22px;
+}

@@ -1,0 +1,907 @@
+
+html, body {
+
+}
+
+
+.habitat {
+  position:relative;
+  top:-5px;
+  left:0px;
+  height:430px;
+  width:1126px;
+  overflow:hidden;
+  background-position: center top;
+  background-size: contain;
+}
+#habBackground {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:430px;
+  width:1126px;
+  z-index:-1;
+  pointer-events: none;
+}
+#habOverlay {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:430px;
+  width:1126px;
+  z-index:9999;
+  overflow:hidden;
+  pointer-events:none;
+}
+#fxLayer {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:430px;
+  width:1126px;
+  z-index:10000;
+  overflow:hidden;
+  pointer-events:none;
+}
+.control_bar {
+  position:relative;
+  display:inline-block;
+  top:-5px;
+  height:50px;
+  width:1126px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: rgba(255, 255, 255, .8);
+  overflow:visible;
+}
+.cb_div {
+  position:absolute;
+  width:100%;
+  align-content: center;
+  top:0px;
+  opacity: 0;
+  visibility: hidden; /*prevent invisible clicks*/
+}
+.cb_element {
+  display:inline-block;
+}
+
+.offscreen {
+  top:-500px;
+}
+
+
+
+#roomController {
+  position:absolute;
+  z-index: 11000;
+}
+#roomController table {
+  width:200px;
+}
+#roomController .rcarrow {
+  background-color: rgba(200, 200, 200, .9);
+  text-align: center;
+  font-size:40px;
+  border-radius:15px;
+  cursor:pointer;
+}
+#roomController .rcarrow:hover {
+  background-color:rgba(255, 255, 255, 1);
+}
+#roomController .disabled {
+  background-color:rgba(180, 180, 180, .8);
+  color:gray;
+}
+#roomController .disabled:hover {
+  background-color:rgba(180, 180, 180, .8);
+  cursor:not-allowed;
+}
+
+
+#centerTable {
+  width:100%;
+  height:100%;
+}
+#centerTable td {
+  width:33%;
+}
+#centerTable .leftcell {
+  text-align:center;
+}
+#centerTable .centercell {
+  border-right:1px solid silver;
+  border-left:1px solid silver;
+  text-align:center;
+  vertical-align:middle;
+  font-style: italic;
+}
+#centerTable .rightcell {
+  text-align:center;
+  vertical-align: middle;
+}
+
+.split {
+  position:relative;
+  width:50%;
+  vertical-align:top;
+  padding:4px;
+}
+.monthly_img {
+  float:left;
+  height:100px;
+  width:100px;
+}
+.fm_img {
+  float:left;
+  padding-right:6px;
+  height:75px;
+  width:75px;
+}
+
+
+.action_button {
+  padding:2px 4px 2px 4px;
+  border-radius:5px;
+  background-color:#acc6ef;
+  text-align:center;
+  cursor:pointer;
+}
+.action_button:hover {
+  top:-2px;
+  box-shadow:0px 2px 4px #555555;
+}
+
+.relative {
+  position:relative;
+}
+.item_hab {
+  width: 1px;
+  height:1px;
+  overflow:visible;
+  text-align:center;
+  vertical-align: middle;
+  display:inline-block;
+  padding:0px;
+  position:absolute;
+  z-index: 1;
+  pointer-events: none;  /*bloody non-cross-browser-supported transparency issues...I WANT CSS4!!!*/
+  /*border:1px solid black;*/
+}
+.item_editing {
+  border-radius: 15px;
+  background-color:rgba(255, 255, 255, 0.2); /*pale white background won't be affected by hue-rotation*/
+}
+.item { /*this is temporary*/
+  /*width: 75px;*/
+  position:absolute;
+  pointer-events: auto;
+}
+.palette {
+  position:absolute;
+  top:47px;
+  width:100%;
+  align-content: center;
+}
+.paletteItem {
+   width:auto;
+   height:25px;
+   display:inline-block;
+   margin-right:2px;
+   margin-left:2px;
+}
+
+
+
+
+#rotate_handle {
+  height:20px;
+  width:20px;
+  background-color: blue;  //temp
+}
+#rotateBox {
+  position:absolute;
+  top:-50px;
+  z-index: 999999999;
+}
+#sSlider {
+  width:100px;
+  margin-right:20px;
+}
+#scaleHandle {
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.todo {
+  border:1px solid red;
+}
+
+#removeButton {
+  color:red;
+}
+#saveButton {
+  color:lightgreen;
+}
+
+.pal_button {
+  display:inline-block;
+  position:relative;
+  margin-top:4px;
+  height:45px;
+}
+.pal_status_bar {
+  position:relative;
+  height:10px;
+  border:1px solid black;
+  width:100%;
+  top:30px;
+}
+.pal_status {
+  position:absolute;
+  background-color:green;
+  height:100%;
+  width:100%;
+}
+.pal_button img {
+  position:relative;
+  top:4px;
+  height:22px;
+}
+
+
+.gift_pane {
+  position:fixed;
+  height:500px;
+  width:1100px;
+  font-size:1.3em;
+  background-color:#eeeeee;
+  border-radius:10px;
+  box-shadow: 4px 4px 8px #333333;
+  z-index:20001;
+}
+#giftContent {
+  position:relative;
+  top:-15px;
+  height:440px;
+  width:1055px;
+  padding-top:5px;
+  overflow-y:scroll;
+  display:inline-block;
+}
+.gift_box {
+  position:relative;
+  display:inline-block;
+  height:150px;
+  width:150px;
+  cursor:pointer;
+  border-radius:10px;
+  border:2px solid #acc6ef;
+}
+.gift_box .img {
+  position:relative;
+  display:inline-block;
+  left:22px;
+  height:100px;
+  width:100px;
+  background-repeat:no-repeat;
+  background-position: center;
+  /*background-image: url(../assets/site/gift.png);*/
+}
+.gift_box .sender {
+  position:relative;
+  font-size:.9em;
+  font-weight:bold;
+}
+#giftBlocks {
+  position:relative;
+  top:-15px;
+  padding-top:5px;
+  width:1055px;
+  height:400px;
+  display:inline-block;
+}
+#giftBlocks .gift {
+  display:inline-block;
+  border-spacing:0px;
+  width: 150px;
+}
+#giftBlocks .image {
+  height:140px;
+  width:140px;
+  border-radius:5px;
+  border:2px solid #acc6ef;
+}
+
+
+.control_button_container {
+  position:relative;
+  display:table;
+  border-spacing:0;
+  float:left;
+  margin-left:0px;
+}
+.control_button {
+  position:relative;
+  display:table-cell;
+  margin:0px;
+  padding-left:10px;
+  padding-right:10px;
+  border:1px solid #acc6ef;
+  box-shadow:0px 1px 2px #333333;
+  color:green;
+  cursor:pointer;
+  font-weight:bold;
+  background: #acc6ef; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #acc6ef); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #acc6ef); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #acc6ef); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #acc6ef); /* Standard syntax */
+}
+.control_button:hover {
+  background:none;
+  background-color:#acc6ef;
+}
+.control_button_container .left {
+  color:#4e77b7;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right:none;
+}
+.control_button_container .right {
+  color:#4e77b7;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left:none;
+}
+.control_button_container .disabled {
+  color:gray;
+  background: #acc6ef; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #acacac); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #acacac); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #acacac); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #acacac); /* Standard syntax */
+}
+
+#habOwner {
+  font-weight:bold;
+  font-size:1.6em;
+}
+
+
+
+.smooth_btn_container .feed {
+  background: #dadaff url('../assets/site/feedbutton.png') no-repeat center top; /* For browsers that do not support gradients */
+  background: url('../assets/site/feedbutton.png') no-repeat top center, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/feedbutton.png') no-repeat top center, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/feedbutton.png') no-repeat top center, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/feedbutton.png') no-repeat top center, linear-gradient(white, #acc6ef);
+}
+.smooth_btn_container .groom {
+  background: #dadaff url('../assets/site/washbutton.png') no-repeat center top; /* For browsers that do not support gradients */
+  background: url('../assets/site/washbutton.png') no-repeat top center, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/washbutton.png') no-repeat top center, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/washbutton.png') no-repeat top center, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/washbutton.png') no-repeat top center, linear-gradient(white, #acc6ef);
+}
+
+
+.smooth_btn_container .decorate {
+  background: #dadaff url('../assets/site/HabIcons.png') 0px; /* For browsers that do not support gradients */
+  background: url('../assets/site/HabIcons.png') 0px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/HabIcons.png') 0px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') 0px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') 0px, linear-gradient(white, #acc6ef);
+}
+.smooth_btn_container .spinner {
+  background: #dadaff url('../assets/site/HabIcons.png') -40px; /* For browsers that do not support gradients */
+  background: url('../assets/site/HabIcons.png') -40px, -webkit-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') -40px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') -40px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') -40px, linear-gradient(white, #acc6ef);
+}
+
+.smooth_btn_container .playdate {
+  background: #dadaff url('../assets/site/HabIcons.png') -80px; /* For browsers that do not support gradients */
+  background: url('../assets/site/HabIcons.png') -80px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/HabIcons.png') -80px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') -80px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/HabIcons.png') -80px, linear-gradient(white, #acc6ef);
+}
+
+.smooth_btn_container .storage {
+  background: #dadaff url('../assets/site/storage.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/storage.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/storage.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/storage.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/storage.png'), linear-gradient(white, #acc6ef);
+  width:47px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .donecheck {
+  background: #dadaff url('../assets/site/donecheck.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/donecheck.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/donecheck.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/donecheck.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/donecheck.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .donethumb {
+  background: #dadaff url('../assets/site/donethumb.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/donethumb.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/donethumb.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/donethumb.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/donethumb.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .removeitem {
+  background: #dadaff url('../assets/site/removeitem.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/removeitem.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/removeitem.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/removeitem.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/removeitem.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .rooms {
+  background: #dadaff url('../assets/site/fourarrow.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/fourarrow.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/fourarrow.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/fourarrow.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/fourarrow.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .interactive {
+  background: #dadaff url('../assets/site/interactive.gif'); /* For browsers that do not support gradients */
+  background: url('../assets/site/interactive.gif'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/interactive.gif'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/interactive.gif'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/interactive.gif'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .centerpal {
+  background: #dadaff url('../assets/site/centerPal.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/centerPal.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/centerPal.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/centerPal.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/centerPal.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .rename_habby {
+  background: #dadaff url('../assets/site/rename_habby.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/rename_habby.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/rename_habby.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/rename_habby.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/rename_habby.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .clear_habby {
+  background: #dadaff url('../assets/site/cleaning.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/cleaning.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/cleaning.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/cleaning.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/cleaning.png'), linear-gradient(white, #acc6ef);
+  width:58px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.smooth_btn_container .play {
+  background: #dadaff url('../assets/site/playpal.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/playpal.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/playpal.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/playpal.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/playpal.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.smooth_btn_container .played {
+  background: #dadaff url('../assets/site/played.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/played.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/played.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/played.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/played.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.smooth_btn_container .larrow {
+  background: #dadaff url('../assets/site/larrow.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/larrow.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/larrow.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/larrow.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/larrow.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.smooth_btn_container .rarrow {
+  background: #dadaff url('../assets/site/rarrow.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/rarrow.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/rarrow.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/rarrow.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/rarrow.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.smooth_btn_container .giftbutton {
+  background: #dadaff url('../assets/site/giftbutton.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/giftbutton.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/giftbutton.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/giftbutton.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/giftbutton.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.smooth_btn_container .messagebutton {
+  background: #dadaff url('../assets/site/messagebutton.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/messagebutton.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/messagebutton.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/messagebutton.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/messagebutton.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.smooth_btn_container .gardenbutton {
+  background: #dadaff url('../assets/site/garden.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/garden.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/garden.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/garden.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/garden.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.smooth_btn_container .profilebutton {
+  background: #dadaff url('../assets/site/profilebutton.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/profilebutton.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/profilebutton.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/profilebutton.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/profilebutton.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.smooth_btn_container .friendadd {
+  background: #dadaff url('../assets/site/friendadd.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/friendadd.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/friendadd.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/friendadd.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/friendadd.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.smooth_btn_container .friendremove {
+  background: #dadaff url('../assets/site/friendremove.png'); /* For browsers that do not support gradients */
+  background: url('../assets/site/friendremove.png'), -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/friendremove.png'), -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/friendremove.png'), -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/friendremove.png'), linear-gradient(white, #acc6ef);
+  width:40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.smooth_btn_container .ceiling {
+  width:40px;
+  padding:0px;
+  background: #dadaff url('../assets/site/LayerIcons.png') 0px; /* For browsers that do not support gradients */
+  background: url('../assets/site/LayerIcons.png') 0px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/LayerIcons.png') 0px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') 0px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') 0px, linear-gradient(white, #acc6ef);
+}
+.smooth_btn_container .up {
+  width:40px;
+  padding:0px;
+  background: #dadaff url('../assets/site/LayerIcons.png') -40px; /* For browsers that do not support gradients */
+  background: url('../assets/site/LayerIcons.png') -40px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/LayerIcons.png') -40px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -40px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -40px, linear-gradient(white, #acc6ef);
+}
+.smooth_btn_container .down {
+  width:40px;
+  padding:0px;
+  background: #dadaff url('../assets/site/LayerIcons.png') -80px; /* For browsers that do not support gradients */
+  background: url('../assets/site/LayerIcons.png') -80px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/LayerIcons.png') -80px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -80px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -80px, linear-gradient(white, #acc6ef);
+}
+.smooth_btn_container .floor {
+  width:40px;
+  padding:0px;
+  background: #dadaff url('../assets/site/LayerIcons.png') -120px; /* For browsers that do not support gradients */
+  background: url('../assets/site/LayerIcons.png') -120px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/LayerIcons.png') -120px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -120px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -120px, linear-gradient(white, #acc6ef);
+}
+.smooth_btn_container .mirror {
+  width:80px;
+  padding:0px;
+  background: #dadaff url('../assets/site/LayerIcons.png') -160px; /* For browsers that do not support gradients */
+  background: url('../assets/site/LayerIcons.png') -160px, -webkit-linear-gradient(white, #acc6ef) ;
+  background: url('../assets/site/LayerIcons.png') -160px, -o-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -160px, -moz-linear-gradient(white, #acc6ef);
+  background: url('../assets/site/LayerIcons.png') -160px, linear-gradient(white, #acc6ef);
+}
+
+
+                  /*New Habitat Selection*/
+.new_hab_pane {
+  position:fixed;
+  height:310px;
+  width:520px;
+  font-size:1.3em;
+  background-color:#eeeeee;
+  border-radius:10px;
+  box-shadow: 4px 4px 8px #333333;
+  z-index:20001;
+  display:inline-block;
+
+}
+
+
+.new_hab_pane .container {
+  position:relative;
+  display:inline-block;
+  height:200px;
+  width:100%;
+  border-bottom:1px solid #acc6ef;
+  border-top:1px solid #acc6ef;
+}
+.new_hab_pane .arrow {
+  position:relative;
+  display:inline-block;
+  vertical-align: top;
+  width:30px;
+  overflow:hidden;
+  line-height: 200px;
+  text-align:center;
+  height:100%;
+  cursor:pointer;
+  background: #acc6ef; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, white, #acc6ef); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, white, #acc6ef); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, white, #acc6ef); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, white, #acc6ef); /* Standard syntax */
+}
+
+.new_hab_pane .left {
+  background: -webkit-linear-gradient(right, white, #acc6ef); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, white, #acc6ef); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, white, #acc6ef); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(right, white, #acc6ef); /* Standard syntax */
+}
+.new_hab_pane .right {
+  background: -webkit-linear-gradient(left, white, #acc6ef); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, white, #acc6ef); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, white, #acc6ef); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left, white, #acc6ef); /* Standard syntax */
+}
+
+.new_hab_pane .disabled {
+  color:gray;
+  background: silver; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, gray); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, gray); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, gray); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, gray); /* Standard syntax */
+}
+.new_hab_pane .selector {
+  position:relative;
+  display:inline-block;
+  vertical-align: top;
+  width:458px;
+  height:100%;
+  cursor:pointer;
+  overflow:hidden;
+}
+.new_hab_pane .previews {
+  position:relative;
+  text-align:left;
+  height:100%;
+  overflow-x: visible;
+  padding:0px;
+}
+.new_hab_pane .hab {
+  position:relative;
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:5px;
+  border:1px solid #acc6ef;
+  padding:5px;
+  margin-left:10px;
+  margin-top:5px;
+  width:200px;
+  height:150px;
+  display:inline-block;
+  vertical-align: top;
+  text-align:center;
+  font-size:25px;
+  background-color:white;
+  box-shadow:2px 2px 6px #333333;
+}
+.new_hab_pane .h_name {
+  position:relative;
+  font-size:.6em;
+  font-weight: bold;
+  line-height:90%;
+  color:black;
+}
+.new_hab_pane .buttons {
+  position:relative;
+  display:inline-block;
+  height:25px;
+  width:100%;
+}
+
+
+
+/*Damn Slider*/
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #acc6ef;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #acc6ef;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #acc6ef;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #acc6ef;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 36px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #acc6ef;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #acc6ef;
+}
+
+#trophyCell {
+  position:relative;
+}
+
+.trophy {
+  position:relative;
+  display:inline-block;
+  display: -moz-inline-stack;
+  *display: inline;
+  text-align: center;
+  height:85px;
+  width:85px;
+  margin:0px;
+  padding:2px;
+  cursor:pointer;
+  float:right;
+}
+.trophy img {
+  height:80px;
+  width:80px;
+}

@@ -1,0 +1,134 @@
+.mail_pane {
+  position:fixed;
+  /*display:table;*/
+  height:80%;
+  width:80%;
+  font-size:1.3em;
+  background-color:#eeeeee;
+  border-radius:10px;
+  box-shadow: 4px 4px 8px #333333;
+  z-index:20001;
+}
+.mail_header {
+  position:relative;
+  width:100%;
+  height:100px;
+  text-align: center;
+}
+#mailNav {
+  position:relative;
+  display:inline-block;
+  width:100%;
+  height:25px;
+  text-align:left;
+  margin:0px;
+  background-color:#acc6ef;
+}
+#mailNav div {
+  display:inline;
+  height:100%;
+  font-weight:bold;
+  background-color:#acc6ef;
+  color:black;
+  border:none;
+  border-style:none;
+  margin:0px;
+  padding-left:20px;
+  padding-right:20px;
+  cursor:pointer;
+}
+#mailNav div:hover {
+  background-color:#ddddff;
+  color:black;
+}
+#mailNav .active {
+  background-color:#eeeeee;
+  color:black;
+}
+#mailContent {
+  position:relative;
+  /* top:180px; */
+  bottom:0px;
+  width:calc(100% - 12px);
+
+  overflow-y:scroll;
+  overflow-x:hidden;
+  margin:5px;
+}
+.mc_full {
+  height:calc(100% - 140px);
+}
+.mc_reply {
+  height:calc(100% - 140px - 100px);
+}
+#mailTable {
+  position:relative;
+  table-layout: fixed;
+  width:100%;
+  overflow-x: hidden;
+  border-collapse:collapse;
+}
+#mailTable td { white-space: nowrap; }
+#mailTable tr:hover { background-color:white; }
+
+#toggleConvo {
+  font-size:.7em;
+  color:blue;
+  cursor:pointer;
+}
+
+.unread {
+  font-weight:bold;
+  color:blue;
+}
+.ellip {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  cursor:pointer;
+}
+
+.message_block {
+  position:relative;
+  width:98%;
+  margin:5px;
+  border:1px solid #acc6ef;
+  border-radius:5px;
+  padding:5px;
+  text-align:left;
+}
+.message_block td {
+  vertical-align: top;
+}
+.message_info_block {
+  position:relative;
+  height:100%;
+  width:60px;
+  padding:5px;
+  border:1px solid #acc6ef;
+  border-radius:5px;
+  font-size:.7em;
+}
+.reply_block {
+  position:absolute;
+  width:98%;
+  height:100px;
+  bottom:0px;
+  padding:5px;
+  bottom:0px;
+  border-top:1px solid #acc6ef;
+}
+.reply_block textarea {
+  width:calc(100% - 100px);
+  height:80px;
+  resize:none;
+}
+.reply_block button {
+  vertical-align:top;
+}
+.trash_conversation {
+  width:25px;
+  background-image:url(../assets/site/trash.png);
+  background-position:center;
+  background-repeat:no-repeat;
+  cursor:pointer;
+}

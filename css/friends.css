@@ -1,0 +1,81 @@
+#friendList {
+  position:relative;
+  text-align: left;
+}
+#newPlayersRow {
+  position:relative;
+  text-align:left;
+  border-bottom:1px solid #acc6ef;
+}
+.friendBlock {
+  position:relative;
+  display:inline-block;
+  *display:inline;
+  width:100px;
+  margin:5px;
+  padding:5px;
+  border-radius: 5px;
+  border:1px solid #acc6ef;
+  font-size: .8em;
+}
+.friendBlock img {
+  position:relative;
+  height:100px;
+  width:100px;
+  cursor:pointer;
+}
+.friendBlock .oWrapper {
+  position:absolute;
+  height:100px;
+  width:100px;
+  top:5px;
+  left:5px;
+  overflow:hidden;
+}
+.friendBlock .overlay {
+  position:absolute;
+  height:20px;
+  width:100px;
+  top:18px;
+  left:-22px;
+  -webkit-transform: rotate(-45deg);
+  background-color:rgba(255,255,255,0.5);
+  font-weight:bold;
+  color:#428e25;
+}
+.friendBlock div {
+  text-align:center;
+}
+.rfButton {
+  position:relative;
+  margin-top:2px;
+  cursor:pointer;
+  color:#444444;
+  background-color: #a44856;
+}
+.afButton {
+  position:relative;
+  margin-top:2px;
+  cursor:pointer;
+  color:#444444;
+  background-color: #acc6ef;
+}
+.fbc {                /*Friends BreadCrumbs*/
+  position:relative;
+  width:1100px;
+  text-align:left;
+  display:inline-block;
+  padding-left:0px;
+  list-style-type: none;
+}
+.fbc .crumb {
+  position:relative;
+  display:inline-block;
+  margin-left:4px;
+  padding:2px 4px 2px 4px;;
+  border-radius:4px;
+  cursor:pointer;
+}
+.fbc .active {
+  background-color:#acc6ef;
+}

@@ -1,0 +1,140 @@
+.stack_list {
+  position:relative;
+  width:100%;
+  display:inline;
+}
+.stack {
+  position:relative;
+  display:inline;
+  font-weight: bold;
+  vertical-align: bottom;
+  padding:4px;
+  max-width:200px;
+}
+
+.s_imageCon {
+  position:absolute;
+  width:100%;
+  bottom:25px;
+  left:-2px;
+  /* border:1px solid white; */
+}
+
+.s_image {
+  max-height:140px;
+  max-width:150px;
+}
+
+.s_item {
+  margin:10px;
+  margin-bottom:20px;
+  border-radius:10px;
+  /* border:2px solid rgb(150,150,255); */
+  position:relative;
+  height:200px;
+  width:150px;
+  display:inline-block;
+  background: rgb(35,156,173);
+  background: radial-gradient(circle, rgba(241,245,73,1) 0%, rgba(181,118,46,1) 20%, rgba(0,212,255,0) 60%);
+}
+
+.s_icon {
+  height:50px;
+  user-select:none;
+  vertical-align: middle;
+}
+.s_x {
+  font-size:1.2em;
+  font-weight:bold;
+  display:inline-block;
+  color:rgb(100,100,255);
+  padding:7px;
+  background:url('../assets/site/burst.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100% 100%;
+}
+.noback {
+  background:none;
+}
+
+.s_button {
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+}
+
+.swalHeader {
+  position:relative;
+  top:-42px;
+  left:-17px;
+  width:calc(100% + 34px);
+  height:80px;
+
+  /*Image background should go here*/
+  background: rgb(241,245,73);
+  background: linear-gradient(180deg, rgba(241,245,73,1) 0%, rgba(181,118,46,.8) 70%, rgba(181,118,46,0) 100%);
+}
+.swalHeader .text {
+  position:absolute;
+  width:100%;
+  text-align:center;
+  bottom:0px;
+}
+
+
+#cartList {
+  list-style:none;
+  width:calc(100% - 40px);
+  text-align:left;
+}
+#cartList .cartItem {
+  width:100%;
+  min-height:50px;
+  text-align:left;
+  padding:5px;
+  margin-bottom:4px;
+  border:none;
+  border-radius:10px;
+  background-color:rgba(150, 150, 255, .3);
+}
+
+#cartList .cartItem:nth-child(even) {
+  background-color:rgba(181,118,46, .3);
+}
+.cartItem.div {
+  position:relative;
+  display:inline;
+}
+
+.cartDD {
+  position:relative;
+  left:10px;
+  max-width:750px;
+}
+
+.cartDD img {
+  max-height:20px;
+  max-width:20px;
+}
+
+
+.clearCartButton {
+  float:right;
+  position:relative;
+  height:20px;
+  width:20px;
+  text-align:center;
+  margin-left:50px;
+  cursor:pointer;
+  border-radius:4px;
+  background-color:darkred;
+  color:white;
+  font-weight:bold;
+  font-size:18px;
+  border:2px groove gray;
+}
+.clearCartButton:hover {
+  background-color:red;
+}

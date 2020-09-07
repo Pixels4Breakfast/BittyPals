@@ -1,0 +1,71 @@
+AddType application/x-httpd-php55 .php
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /mobtest/
+#RewriteBase /
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^\.htaccess$ - [F]
+
+
+RewriteRule ^admin$ admin.php [NC]
+RewriteRule ^habitat/$ habitat [NC,QSA,R]
+RewriteRule ^habitat$ habitat.php [NC,QSA]
+RewriteRule ^habitat/([0-9a-z_]+)$ habitat?userid=$1 [NC,QSA,R]
+
+RewriteRule ^garden/$ garden [NC,QSA,R]
+RewriteRule ^garden$ garden.php [NC,QSA]
+RewriteRule ^garden/([0-9a-z_]+)$ garden?userid=$1 [NC,QSA,R]
+
+RewriteRule ^trophies/$ trophies [NC,QSA,R]
+RewriteRule ^trophies$ trophies.php [NC,QSA]
+RewriteRule ^trophies/([0-9a-z_]+)$ trophies?userid=$1 [NC,QSA,R]
+
+RewriteRule ^collectibles/$ collectibles [NC,QSA,R]
+RewriteRule ^collectibles$ collectiblestore.php [NC,QSA]
+RewriteRule ^collectibles/([0-9a-z_]+)$ collectibles?userid=$1 [NC,QSA,R]
+
+RewriteRule ^store/$ store [NC,QSA,R]
+RewriteRule ^store$ bittyStore.php [NC,QSA]
+RewriteRule ^store/([0-9a-z_]+)$ store?userid=$1 [NC,QSA,R]
+
+RewriteRule ^arcade/$ arcade [NC,QSA,R]
+RewriteRule ^arcade$ arcade.php [NC,QSA]
+RewriteRule ^arcade/([0-9a-z_]+)$ arcade?gamename=$1 [NC,QSA,R]
+
+
+RewriteRule ^adoption$ adoption.php [NC,QSA]
+RewriteRule ^home$ index.php [NC]
+RewriteRule ^news$ news.php [NC,QSA]
+RewriteRule ^friends$ friends.php [NC,QSA]
+RewriteRule ^market$ market.php [NC,QSA]
+RewriteRule ^bank$ bank.php [NC,QSA]
+RewriteRule ^cart$ cart.php [NC,QSA]
+RewriteRule ^gift$ gift.php [NC,QSA]
+RewriteRule ^gift/([0-9a-z]+)$ gift?r=$1 [NC,QSA,R]
+
+RewriteRule ^recyclotron$ recyclotron.php [NC,QSA]
+RewriteRule ^recyclotron/([0-9a-z]+)$ recyclotron?r=$1 [NC,QSA,R]
+RewriteRule ^faq$ faq.php [NC,QSA]
+RewriteRule ^terraformers$ terraformers.php [NC,QSA]
+RewriteRule ^community$ community/ [NC,QSA,R]
+RewriteRule ^invite$ invite.php [NC,QSA]
+RewriteRule ^invitation$ invitation.php [NC,QSA]
+
+RewriteRule ^forcequit$ forceQuit.php [NC]
+
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost.*$ [NC]
+#RewriteRule ^.?\.(gif|jpg|png|js|css)$ - [F]
+
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost.*$ [NC]
+#RewriteRule ^js/$ - [F]
+
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost.*$ [NC]
+#RewriteRule ^\.js$ - [F]
